@@ -15,8 +15,6 @@ function salary(input) {
       case "Reddit":
         money -= 50;
         break;
-      default:
-        break;
     }
     if (money <= 0) {
       console.log("You have lost your salary.");
