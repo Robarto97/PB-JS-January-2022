@@ -3,17 +3,10 @@ function fuelTank(input) {
   const fuelLiter = Number(input[1]);
 
   if (fuel === "Diesel" || fuel === "Gasoline" || fuel === "Gas") {
-    if (fuel === "Diesel") {
-      fuel = "diesel";
-    } else if (fuel === "Gasoline") {
-      fuel = "gasoline";
-    } else if (fuel === "Gas") {
-      fuel = "gas";
-    }
     if (fuelLiter >= 25) {
-      console.log(`You have enough ${fuel}.`);
+      console.log(`You have enough ${fuel.toLowerCase()}.`);
     } else {
-      console.log(`Fill your tank with ${fuel}!`);
+      console.log(`Fill your tank with ${fuel.toLowerCase()}!`);
     }
   } else {
     console.log("Invalid fuel!");
