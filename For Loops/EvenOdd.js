@@ -36,15 +36,6 @@ function evenOdd(input) {
   if (oddCounter == 0) {
     console.log(`OddMin=No,`);
     console.log(`OddMax=No,`);
-  } else if (oddCounter == 1) {
-    if (oddMin !== 100) {
-      oddMax = oddMin;
-    } else if (oddMax !== -100) {
-      oddMin = oddMax;
-    }
-
-    console.log(`OddMin=${oddMin.toFixed(2)},`);
-    console.log(`OddMax=${oddMax.toFixed(2)},`);
   } else {
     console.log(`OddMin=${oddMin.toFixed(2)},`);
     console.log(`OddMax=${oddMax.toFixed(2)},`);
@@ -55,15 +46,6 @@ function evenOdd(input) {
   if (evenCounter == 0) {
     console.log(`EvenMin=No,`);
     console.log(`EvenMax=No`);
-  } else if (evenCounter == 1) {
-    if (evenMin !== 100) {
-      evenMax = evenMin;
-    } else if (evenMax !== -100) {
-      evenMin = evenMax;
-    }
-
-    console.log(`EvenMin=${evenMin.toFixed(2)},`);
-    console.log(`EvenMax=${evenMax.toFixed(2)}`);
   } else {
     console.log(`EvenMin=${evenMin.toFixed(2)},`);
     console.log(`EvenMax=${evenMax.toFixed(2)}`);

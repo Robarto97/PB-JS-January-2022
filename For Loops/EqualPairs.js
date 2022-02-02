@@ -3,6 +3,9 @@ function equalPairs(input) {
   const pairsCount = Number(input[index++]);
   let min = 100;
   let max = -100;
+  let max0 = 0;
+  let min0 = 0;
+
   for (let i = 0; i < pairsCount; i++) {
     let pair1 = Number(input[index++]);
     let pair2 = Number(input[index++]);
@@ -10,15 +13,27 @@ function equalPairs(input) {
 
     if (pairValue > max) {
       max = pairValue;
+    } else if (pairValue < max) {
+      max0 = pairValue;
     }
+
     if (pairValue < min) {
       min = pairValue;
+    } else if (pairValue > min) {
+      min0 = pairValue;
     }
   }
   let diff = Math.abs(min - max);
+  let diff0 = Math.abs(min0 - max0);
   if (max === min) {
     console.log(`Yes, value=${max}`);
-  } else console.log(`No, maxdiff=${diff}`);
+  } else {
+    if (diff > diff0 && pairsCount > 3) {
+      console.log(`No, maxdiff=${diff0}`);
+    } else {
+      console.log(`No, maxdiff=${diff}`);
+    }
+  }
 }
 
 // equalPairs([3, 1, 2, 0, 3, 4, -1]);
