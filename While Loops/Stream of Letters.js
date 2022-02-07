@@ -5,43 +5,43 @@ function streamOfLetters(input) {
   let cCounter = 0;
   let oCounter = 0;
   let nCounter = 0;
-  let vault = "";
+  let word = "";
 
   while (symbol !== "End") {
-    if ((symbol>= "A" && symbol <= "Z") ||(symbol>= "a" && symbol <= "z")) {
+    if ((symbol >= "A" && symbol <= "Z") || (symbol >= "a" && symbol <= "z")) {
       switch (symbol) {
         case "c":
           if (cCounter === 1) {
-            vault += symbol;
+            word += symbol;
           } else {
             cCounter++;
           }
           break;
         case "o":
           if (oCounter === 1) {
-            vault += symbol;
+            word += symbol;
           } else {
             oCounter++;
           }
           break;
         case "n":
           if (nCounter === 1) {
-            vault += symbol;
+            word += symbol;
           } else {
             nCounter++;
           }
           break;
         default:
-          vault += symbol;
+          word += symbol;
           break;
       }
     }
     if (cCounter === 1 && oCounter === 1 && nCounter === 1) {
-      text += vault + " ";
+      text += word + " ";
       cCounter = 0;
       oCounter = 0;
       nCounter = 0;
-      vault = "";
+      word = "";
     }
 
     index++;
