@@ -3,24 +3,32 @@ function carNumber(input) {
   const end = Number(input[1]);
   let line = "";
 
-  for (let i = 3222; i <= 9999; i++) {
+  for (let i = 1111; i <= 9999; i++) {
     let number = "" + i;
-    let firstDiggit = Number(number[0]);
-    let secondDiggit = Number(number[1]);
-    let thirdDiggit = Number(number[2]);
-    let forthDiggit = Number(number[3]);
-    for (let j = 0; j < 4; j++) {
-      if (Number(number[j]) >= start && Number(number[j]) <= end) {
-        if (firstDiggit > forthDiggit) {
-          if ((secondDiggit + thirdDiggit) % 2 === 0) {
-            if (firstDiggit % 2 === 0) {
-              if (forthDiggit % 2 !== 0) {
-                line += Number(number[j]) + " ";
-              }
-            } else if (firstDiggit % 2 !== 0) {
-              if (forthDiggit % 2 === 0) {
-                line += Number(number[j]) + " ";
-              }
+    let first = Number(number[0]);
+    let second = Number(number[1]);
+    let third = Number(number[2]);
+    let forth = Number(number[3]);
+
+    if (
+      first >= start &&
+      first <= end &&
+      second >= start &&
+      second <= end &&
+      third >= start &&
+      third <= end &&
+      forth >= start &&
+      forth <= end
+    ) {
+      if (first > forth) {
+        if ((second + third) % 2 === 0) {
+          if (first % 2 === 0) {
+            if (forth % 2 !== 0) {
+              line += Number(number) + " ";
+            }
+          } else if (first % 2 !== 0) {
+            if (forth % 2 === 0) {
+              line += Number(number) + " ";
             }
           }
         }
@@ -30,4 +38,4 @@ function carNumber(input) {
   console.log(line);
 }
 
-carNumber([2, 3]);
+carNumber([5, 8]);
